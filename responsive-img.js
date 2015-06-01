@@ -6,13 +6,22 @@
  // Licensed under the MIT license
  */
 
-function makeImagesResponsive() {
+function makeImagesResponsive(domPart) {
 
     var viewport = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var images;
 
     ////////GET ALL IMAGES////////
+    if (domPart && domPart.length) {
+        domPart = domPart[0];
+    }
 
-    var images = document.getElementsByTagName('body')[0].getElementsByTagName('img');
+    if (domPart) {
+        images = domPart.getElementsByTagName('img');
+    } else {
+        images = document.getElementsByTagName('body')[0].getElementsByTagName('img');
+    }
+
     if (images.length === 0) {
         return;
     }
