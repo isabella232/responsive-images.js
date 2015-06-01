@@ -19,7 +19,7 @@ function makeImagesResponsive(domPart) {
     if (domPart) {
         images = domPart.getElementsByTagName('img');
     } else {
-        images = document.getElementsByTagName('body')[0].getElementsByTagName('img');
+        images = document.body.getElementsByTagName('img');
     }
 
     if (images.length === 0) {
